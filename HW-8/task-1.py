@@ -20,8 +20,7 @@ class Data:
                     dirty_string[number] = int(dirty_string[number])
                     if number == len(dirty_string)-1:
                         return dirty_string
-                except ValueError as err:
-                    print(err)
+                except ValueError:
                     print('Вы ввели не целое число в качестве даты')
                     dirty_string = str(input('Enter data again: '))
                     break
@@ -32,9 +31,11 @@ class Data:
             print(f'Date <<{clear_string[0]}>> is out of borders 0-31') #тут у меня случился приступ лени делать бесконечный цикл (как в классе выше) и добиваться правильной даты
             return
 
-        if clear_string[1] < 1 or clear_string[0] > 12:
+        if clear_string[1] < 1 or clear_string[1] > 12:
             print(f'Month number <<{clear_string[1]}>> is out of borders 0-12')
             return
 
 
-test = Data('11a-11-2001')
+#test_1 = Data('21-11-2001')
+#test_2 = Data('11-51-2001')
+test_3 = Data('11-5d1-2001')
